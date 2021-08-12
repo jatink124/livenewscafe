@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Provider} from './Context';
-import AllUsers from './components/category/catGetUsers';
-import AddUser from './components/category/catAddUser';
-import Actions from './Actions/Actions-Category';
+import AllUsers from './components/subcategory/subcatGetUsers';
+import AddUser from './components/subcategory/subcatAddUser';
+import Actions from './Actions/Actions-subCategory';
 const GridWrapper = styled.div`
   display: grid;
   grid-gap: 10px;
@@ -22,7 +22,7 @@ const GridWrapper = styled.div`
 //   </GridWrapper>
 // )
 
-export class About extends Actions {
+export class SubCategory extends Actions {
   render(){
     const contextValue = {
         all_users:this.state.users,

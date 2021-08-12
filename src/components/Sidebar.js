@@ -21,21 +21,34 @@ class SideNav extends React.Component {
             items: [
                 {
                   path: '/', /* path is used as id to check which NavItem is active basically */
-                  name: 'Home',
+                  name: 'Add Post',
                   css: 'fa fa-fw fa-home',
                   key: 1 /* Key is required, else console throws error. Does this please you Mr. Browser?! */
                 },
                 {
                   path: '/about',
-                  name: 'About',
+                  name: 'Modify Post',
                   css: 'fa fa-fw fa-clock',
                   key: 2
                 },
                 {
+                    path: '/SubCategory',
+                    name: 'Add Sub-Category',
+                    css: 'fas fa-hashtag',
+                    key: 3
+                  },
+                  ,
+                {
+                    path: '/post',
+                    name: 'Add Post',
+                    css: 'fas fa-hashtag',
+                    key: 4
+                  },
+                {
                   path: '/NoMatch',
-                  name: 'NoMatch',
+                  name: 'Add Category',
                   css: 'fas fa-hashtag',
-                  key: 3
+                  key: 5
                 },
               ]
         }
@@ -85,6 +98,11 @@ const StyledNavItem = styled.div`
     }
 `;
 
+
+const SidePropName = styled.div`
+font-size: 0.4em;
+`;
+
 class NavItem extends React.Component {
     handleClick = () => {
         const { path, onItemClick } = this.props;
@@ -95,8 +113,11 @@ class NavItem extends React.Component {
         const { active } = this.props;
         return(
             <StyledNavItem active={active}>
-                <Link to={this.props.path} className={this.props.css} onClick={this.handleClick}>
-                    <NavIcon></NavIcon>
+                <Link to={this.props.path}  onClick={this.handleClick}>
+                    {/* <NavIcon></NavIcon> */}
+                    {/* className={this.props.css} */}
+          <SidePropName>
+              {this.props.name}</SidePropName>
                 </Link>
             </StyledNavItem>
         );

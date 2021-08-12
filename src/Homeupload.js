@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Provider} from './Context';
-import AllUsers from './components/category/catGetUsers';
-import AddUser from './components/category/catAddUser';
-import Actions from './Actions/Actions-Category';
+import AllUsers from './components/GetUsers';
+import AddUser from './components/AddUser';
+import Actions from './Actions/Actions';
+import UploadFile from './UploadFile'
 const GridWrapper = styled.div`
   display: grid;
   grid-gap: 10px;
@@ -12,17 +13,15 @@ const GridWrapper = styled.div`
   margin-right: 6em;
   grid-template-columns: repeat(12, 1fr);
   grid-auto-rows: minmax(25px, auto);
-`; 
-// export const About = () => (
+`;
+// export const Home = (props) => (
 //   <GridWrapper>
-//     <h2>About Page</h2>
-//     <p>State at ceiling lay on arms while you're using the keyboard so this human feeds me.</p>
-//     <p>I am a kitty cat, sup, feed me, no cares in the world</p>
-//     <p>Meow meow, I tell my human purr for no reason but to chase after</p>
+//     <p>This is a paragraph and I am writing on the home page</p>
+//     <p>This is another paragraph, hi hey hello whatsup yo</p>
 //   </GridWrapper>
 // )
 
-export class About extends Actions {
+export class Home extends Actions {
   render(){
     const contextValue = {
         all_users:this.state.users,
@@ -40,15 +39,7 @@ export class About extends Actions {
                   <div className="card shadow-sm">
                       <h1 className="card-header text-center text-uppercase text-muted">Add Admin Details</h1>
                       <div className="card-body">
-                          <div className="row">
-                              <div className="col-md-12">
-                                  <AddUser/>
-                              </div></div>
-                              <div className="row">
-                              <div className="col-md-12">
-                                <AllUsers/>
-                              </div>
-                          </div>
+                      <UploadFile/>
                       </div>
                   </div>
       
@@ -58,3 +49,5 @@ export class About extends Actions {
     );
   }
 }
+
+// export default Home;
