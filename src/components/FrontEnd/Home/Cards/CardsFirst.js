@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import {AppContext} from '../../../../Context';
 import {Provider} from '../../../../Context';
 // import './App.css';
-// import '../../../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import { NavigationBar } from './components/NavigationBar';
 // import { SubCategory } from './subcategory';
